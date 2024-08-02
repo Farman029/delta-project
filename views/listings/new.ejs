@@ -1,0 +1,94 @@
+<% layout("/layouts/boilerplate")-%>
+<body>
+    <br><br><br>
+<div class="col-8 offset-2">
+    <div class="row">
+    
+    <h3>Create a New Listing</h3>
+    <form method="POST"
+     action="/listings" 
+     class="needs-validation" 
+     novalidate 
+     enctype="multipart/form-data" >
+    <div class="mb-3" >
+      <label for="title" class="form-label">Title</label>
+      <input name="listing[title]" placeholder="add a catchy title" type="text"   class="form-control" required />
+      <div class="valid-feedback"   >Title looks good</div>
+      <div class="invalid-feedback"   > make sure enter a good title/div>
+    </div>
+   
+     <div  class="mb-3" >
+      <label for="description" class="form-label">Description</label>
+      <textarea
+      name="listing[description]"
+      class="form-control"  required>
+    </textarea>
+    <div class="valid-feedback"   > good description</div>
+    <div class="invalid-feedback">
+
+      
+      please enter a valid  description
+         </div>
+     </div>
+    
+     <!-- <div  class="mb-3 " >
+      <label for="image" class="form-label">Image Link</label>
+      <input
+      name="listing[image]"
+      placeholder="enter image URL/Link"
+      type="text" class="form-control"  
+    />
+     </div> --> 
+     <!-- ab hum upload karwayenge  pehle backend ke pas file bhejenge then usko 3rd party me save krenge then 3rd party se link lekar save karenge  -->
+<!--  mongo me files sav enahi hoti because size is tooo large  -->
+     <div  class="mb-3 " >
+      <label for="image" class="form-label">Upload Listing Image </label>
+      <input
+      name="listing[image]"
+      placeholder="enter image URL/Link"
+      type="file" class="form-control"  
+      required
+    />
+     </div>
+    
+     <div class="row">
+
+      <div class="mb-3   col-4"  > 
+        <label for="price" class="form-label">Price</label>
+         <input name="listing[price]" placeholder="1200" type="String" class="form-control" required/>
+         <div class="valid-feedback"   >friendly amount</div>
+         <div class="invalid-feedback">
+     please enter a valid price
+        </div>
+        </div>
+        <div class="mb-3  col-8" >
+          <label for="country" class="form-label">Country</label>
+          <input name="listing[country]" placeholder="enter country" type="text" class="form-control"  required/>
+          <div class="valid-feedback"   >Nice Country</div>
+          <div class="invalid-feedback">
+            please enter a valid country
+               </div>
+        </div>
+  
+     </div>
+     
+  
+      
+    <div class="mb-3" >
+      <label for="location" class="form-label">location</label>
+      <input
+      name="listing[location]"
+      placeholder="jaipur,rajasthan"
+      type="text" class="form-control"  required
+    />
+    </div>
+    <br>
+  
+      <button class="btn btn-dark add-btn">Add</button>
+      <br><br> <br>
+    </form>
+    <br><br> 
+  </div>
+  </div>
+  <!-- <script src="/js/script.js"></script> -->
+  </body>
